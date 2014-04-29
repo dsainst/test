@@ -1,0 +1,35 @@
+.rateme {
+	float: left;
+	}
+
+.rateme label {
+	float:right; 
+	width:16px; 
+	height: 16px; 
+	overflow:hidden;
+	white-space:nowrap; 
+	cursor:pointer; 
+	text-indent: -9999px;
+	}
+	
+.rateme:not(:checked) > input { 
+position:absolute; 
+top:-9999px; 
+clip:rect(0,0,0,0); 
+}
+
+.rateme:not(:checked) > label {
+	background: url('../image/stars.png') no-repeat 0 -16px;
+	}
+	
+.rateme > input:checked ~ label {
+width: 16px;
+height: 16px;
+background: url('../image/stars.png') no-repeat 0 0px;
+}
+
+.rateme:not(:checked) > label:hover,
+.rateme > label:hover ~ input:checked ~ label,
+.rateme > input:checked + label:hover ~ label,
+.rateme > input:checked + label:hover,
+.rateme:not(:checked) > label:hover ~ label {background: url('../image/stars.png') no-repeat 0 0;}
